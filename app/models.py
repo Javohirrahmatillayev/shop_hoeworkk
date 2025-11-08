@@ -1,5 +1,9 @@
 from django.db import models
 from decimal import Decimal
+from django.templatetags.static import static
+from django.contrib.auth.models import AbstractUser, Group, Permission
+
+
 
 
 class BaseModel(models.Model):
@@ -40,6 +44,33 @@ class Product(BaseModel):
         
         return self.price
     
+    @property
+    def image_url(self):
+        if not self.image:
+            return static('app/image/not_found_image.jpg')
+        return self.image.url
+    
     
     def __str__(self):
-        return self.name
+        return self.name 
+    
+class CustomUser(AbstractUser):
+    email = models.EmailField(unique=True)
+    ROLE_CHOICES = (
+        ('admin', 'Admin'),
+        ('user', 'User'), 
+    )       
+    role = models.CharField(max_length=20, choices=ROLE_CHOICES, default='user')
+
+    groups = models.ManyToManyField(
+        Group,
+        related_name="customuser_set",
+        blank=True,
+        help_text="The groups this user belongs to."
+    )
+    user_permissions = models.ManyToManyField(
+        Permission,
+        related_name="customuser_set",
+        blank=True,
+        help_text="Specific permissions for this user."
+    )

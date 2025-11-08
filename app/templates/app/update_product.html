@@ -1,0 +1,15 @@
+{% extends 'app/base/base.html' %}
+
+{% block title %}Edit Product{% endblock %}
+
+{% block detail_content %}
+<div class="container mt-5">
+    <h2>Edit Product: {{ product.name }}</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Save Changes</button>
+        <a href="{% url 'app:product_detail' product.id %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock %}
