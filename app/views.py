@@ -33,14 +33,14 @@ from django.shortcuts import render
 from .models import Product
 
 def home(request):
-    filter_type = request.GET.get('filter')  # cheap / expensive / None
+    filter_type = request.GET.get('filter')  
 
     products = Product.objects.all()
 
     if filter_type == 'cheap':
-        products = products.order_by('price')  # arzonidan qimmatga
+        products = products.order_by('price')  
     elif filter_type == 'expensive':
-        products = products.order_by('-price')  # qimmatidan arzonga
+        products = products.order_by('-price')  
 
     context = {
         'products': products,
