@@ -1,11 +1,13 @@
-from django.shortcuts import render, get_object_or_404, redirect
-from .models import Category, Product
-from .forms import CustomUserCreationForm, ProductForm
+from django.shortcuts import render, get_object_or_404, redirect, HttpResponse
+from .models import Category, Product, Order
+from .forms import CustomUserCreationForm, ProductForm, CategoryForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required   
 from django.contrib import messages
 from django.http import HttpResponseForbidden
+from django.db.models import Q
+
 
 
 def index(request,category_id = None):
@@ -16,13 +18,37 @@ def index(request,category_id = None):
         products = Product.objects.filter(category = category_id)
     else:
         products = Product.objects.all()
-    
-    
+
     context = {
         'categories':categories,
         'products':products
     }
     return render(request,'app/home.html',context)
+
+from django.shortcuts import render
+from django.db.models import Q
+from .models import Product
+
+from django.shortcuts import render
+from .models import Product
+
+def home(request):
+    filter_type = request.GET.get('filter')  # cheap / expensive / None
+
+    products = Product.objects.all()
+
+    if filter_type == 'cheap':
+        products = products.order_by('price')  # arzonidan qimmatga
+    elif filter_type == 'expensive':
+        products = products.order_by('-price')  # qimmatidan arzonga
+
+    context = {
+        'products': products,
+        'filter_type': filter_type,
+    }
+    return render(request, 'app/home.html', context)
+
+
 
 def view_product(request, pk):
     product = get_object_or_404(Product, pk = pk)
@@ -61,11 +87,24 @@ def login_view(request):
                 messages.error(request, "Invalid credentials")
         else:
             messages.error(request, "Please correct the errors below")
-    return render(request, 'app/login.html', {'form': form})
+    return render(request, 'app/login.html', {'form': form})    
 
 def logout_view(request):
     logout(request)
     return redirect('app:index')
+
+@login_required
+def add_category(request):
+    if request.user.role != 'admin':
+        return HttpResponseForbidden("You are not allowed to add categories.")
+
+    form = CategoryForm(request.POST or None)
+    if request.method == 'POST' and form.is_valid():
+        form.save()
+        messages.success(request, "Product added successfully!")
+        return redirect('app:index')  
+
+    return render(request, 'app/add_category.html', {'form': form})
 
 @login_required
 def add_product_view(request):
@@ -117,3 +156,38 @@ def delete_product(request, pk):
         return redirect('app:index')
     
     return render(request, 'app/delete_product.html', {'product': product})
+
+def place_order(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+
+    if request.method == "POST":
+        name = request.POST.get("name")
+        phone = request.POST.get("phone")
+        quantity = int(request.POST.get("quantity"))
+        price = request.POST.get("price")
+
+        if quantity > product.stock:
+            return HttpResponse("Yetarli stock yo'q!")
+
+        product.stock -= quantity
+        product.save()
+
+        Order.objects.create(
+            name=name,
+            phone=phone,
+            quantity=quantity,
+            product=product,
+            price = price 
+        )
+
+        return redirect("app:index") 
+    return render(request, "app/detail.html", {"product": product})
+
+
+
+def orders_list(request):
+    orders = Order.objects.all()  
+    context = {
+        'orders': orders
+    }
+    return render(request, 'app/orders_list.html', context)

@@ -1,4 +1,4 @@
-from .models import CustomUser, Product
+from .models import CustomUser, Product, Category
 from django import forms
 
 class CustomUserCreationForm(forms.ModelForm):
@@ -27,3 +27,16 @@ class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
         fields = ['name', 'price','description', 'stock', 'discount', 'image', 'category']
+        
+class CategoryForm(forms.ModelForm):
+    class Meta:
+        model = Category
+        fields = ['title']
+        widgets = {
+            'name': forms.TextInput(attrs={
+                'class': 'input-box',
+                'placeholder': 'Kategoriya nomi'
+            })
+        }
+        
+        

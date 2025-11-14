@@ -26,16 +26,23 @@
             </div>
             <div class="row">
                 <div class="col-1">
-                    <a class="btn btn-outline-dark mt-auto" href="#"> Expensive </a>
+                    <a href="?filter=expensive" 
+                       class="btn btn-outline-dark mt-auto {% if filter_type == 'expensive' %}active{% endif %}">
+                        Expensive
+                    </a>
                 </div>
-
+            
                 <div class="col-1">
-                    <a class="btn btn-outline-dark mt-auto" href="#"> Cheap </a>
+                    <a href="?filter=cheap" 
+                       class="btn btn-outline-dark mt-auto {% if filter_type == 'cheap' %}active{% endif %}">
+                        Cheap
+                    </a>
                 </div>
-
+            
                 <div class="col-1">
-                    <a class="btn btn-outline-dark mt-auto" href="#"> Likes </a>
+                    <a href="{% url 'app:index' %}" class="btn btn-outline-dark mt-auto">All</a>
                 </div>
+            </div>
 
             </div>
         </div>

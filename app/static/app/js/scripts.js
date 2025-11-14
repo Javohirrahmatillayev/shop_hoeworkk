@@ -5,3 +5,13 @@
 */
 // This file is intentionally blank
 // Use this file to add JavaScript to your project
+const quantityInput = document.getElementById('quantity');
+const priceInput = document.getElementById('price');
+
+quantityInput.addEventListener('input', () => {
+    const unitPrice = parseFloat(quantityInput.dataset.price); // data-price'dan olamiz
+    const quantity = parseInt(quantityInput.value) || 0;
+    priceInput.value = quantity * unitPrice;
+});
+
+

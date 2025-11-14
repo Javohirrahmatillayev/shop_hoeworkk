@@ -10824,3 +10824,32 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+
+.heart-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.heart-icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-image: url("/static/app/image/like_button.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform 0.2s;
+}
+
+.heart-button:hover .heart-icon {
+  transform: scale(1.2);
+}
+
+
+.heart-icon.liked {
+  filter: brightness(0) saturate(100%) invert(22%) sepia(86%) saturate(7484%) hue-rotate(357deg) brightness(102%) contrast(117%);
+}
+
+
