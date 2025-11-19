@@ -1,4 +1,4 @@
-from .models import CustomUser, Product, Category
+from .models import CustomUser, Product, Category, ProductComment
 from django import forms
 
 class CustomUserCreationForm(forms.ModelForm):
@@ -38,5 +38,18 @@ class CategoryForm(forms.ModelForm):
                 'placeholder': 'Kategoriya nomi'
             })
         }
+
+class ProductCommentForm(forms.ModelForm):
+    class Meta:
+        model = ProductComment
+        fields = ['comment']
+        widgets = {
+            'comment': forms.Textarea(attrs={
+                'class': 'form-control',
+                'placeholder': 'Comment yozing...'
+            })
+        }
+
+
         
         

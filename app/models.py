@@ -2,6 +2,7 @@ from django.db import models
 from decimal import Decimal
 from django.templatetags.static import static
 from django.contrib.auth.models import AbstractUser, Group, Permission
+from django.conf import settings
 
 
 
@@ -77,11 +78,24 @@ class CustomUser(AbstractUser):
     
 
 class Order(models.Model):
-    name = models.CharField(max_length=100)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE )
     phone = models.CharField(max_length=20)
     quantity = models.IntegerField()
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     created_at = models.DateTimeField(auto_now_add=True)
+    
+class ProductComment(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='comments')
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    comment = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    class Meta:
+        unique_together = ('product', 'user')
+        
+    def __str__(self):
+        return f"{self.user.username} - {self.product.name}"
+        
 
 

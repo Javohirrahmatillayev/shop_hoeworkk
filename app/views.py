@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect, HttpResponse
-from .models import Category, Product, Order
-from .forms import CustomUserCreationForm, ProductForm, CategoryForm
+from .models import Category, Product, Order, ProductComment
+from .forms import CustomUserCreationForm, ProductForm, CategoryForm, ProductCommentForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required   
@@ -25,12 +25,6 @@ def index(request,category_id = None):
     }
     return render(request,'app/home.html',context)
 
-from django.shortcuts import render
-from django.db.models import Q
-from .models import Product
-
-from django.shortcuts import render
-from .models import Product
 
 def home(request):
     filter_type = request.GET.get('filter')  
@@ -157,6 +151,8 @@ def delete_product(request, pk):
     
     return render(request, 'app/delete_product.html', {'product': product})
 
+
+@login_required
 def place_order(request, product_id):
     product = get_object_or_404(Product, id=product_id)
 
@@ -173,7 +169,7 @@ def place_order(request, product_id):
         product.save()
 
         Order.objects.create(
-            name=name,
+            user=request.user,
             phone=phone,
             quantity=quantity,
             product=product,
@@ -191,3 +187,29 @@ def orders_list(request):
         'orders': orders
     }
     return render(request, 'app/orders_list.html', context)
+
+@login_required
+def add_comment(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    
+    if not Order.objects.filter(user=request.user, product=product).exists():
+        return HttpResponse('You must order this product before commenting.')
+    
+    if ProductComment.objects.filter(user=request.user, product=product).exists():
+        return HttpResponse('You have already commented on this product.')
+    
+    if request.method == 'POST':
+        form = ProductCommentForm(request.POST)
+        if form.is_valid():
+            ProductComment.objects.create(
+                product=product,
+                user=request.user,
+                comment=form.cleaned_data['comment']
+            )
+            return redirect('app:product_detail', product_id=product.id)
+    else:
+        form = ProductCommentForm()
+
+    return render(request, 'detail.html', {'form': form, 'product': product })
+
+    

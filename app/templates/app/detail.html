@@ -25,7 +25,6 @@
                 </div>
                 <p class="lead">{{product.description}}</p>
 
-
                 <!-- Admin buttons -->
                 {% if user.is_authenticated and user.role == 'admin' %}
                     <div class="mt-3 mb-4">
@@ -34,21 +33,16 @@
                     </div>
                 {% endif %}
                 
-                <div class="d-flex">
+                <div class="d-flex mb-4">
                     <form method="POST" action="{% url 'app:place_order' product.id %}">
                         {% csrf_token %}
-                        
-                        <div class="mb-3">
-                            <label>Name</label>
-                            <input type="text" name="name" class="form-control" required>
-                        </div>
                     
                         <div class="mb-3">
                             <label>Phone</label>
                             <input type="text" name="phone" class="form-control" required>
                         </div>
                     
-                        <input type="number" name="quantity" id="quantity" class="form-control" value="1" min="1"
+                        <input type="number" name="quantity" id="quantity" class="form-control mb-3" value="1" min="1"
                             data-price="{% if product.discount > 0 %}{{ product.discounted_price }}{% else %}{{ product.price }}{% endif %}"
                             oninput="document.getElementById('price').value = this.value * parseFloat(this.dataset.price);">
 
@@ -58,24 +52,49 @@
                                 value="{% if product.discount > 0 %}{{ product.discounted_price }}{% else %}{{ product.price }}{% endif %}">
                         </div>
 
-                        
-                    
                         <button class="btn btn-primary" type="submit"
-                                onclick="return confirm('Ushbu mahsulotning narxi $' + document.getElementById('price').value + ' bo‘ladi. Rostdan ham sotib olasizmi?');">
+                                onclick="return confirm('Ushbu mahsulotning narxi $' + document.getElementById('price').value + ' bo\'ladi. Rostdan ham sotib olasizmi?');">
                             Place Order
                         </button>
                     </form>
-                    
-                    
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Rest of your comments and related products sections -->
+<!-- Comments section -->
 <div class="container mt-4 mb-4">
-    <!-- Latest comments and Add comment forms remain unchanged -->
+    <h3>Comments ({{ total_comments }})</h3>
+
+    {% for comment in comments %}
+        <div class="card mb-2">
+            <div class="card-body">
+                <h6 class="card-title mb-1">{{ comment.user.username }}</h6>
+                <p class="card-text">{{ comment.comment }}</p>
+                <small class="text-muted">{{ comment.created_at|date:"Y-m-d H:i" }}</small>
+            </div>
+        </div>
+    {% endfor %}
+
+    {% if total_comments > 3 %}
+        <a href="{% url 'product_comments' product.id %}" class="btn btn-link">View all comments</a>
+    {% endif %}
+
+    <hr>
+
+    {% if can_comment %}
+        <h5>Add your comment</h5>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Submit Comment</button>
+        </form>
+    {% elif user.is_authenticated %}
+        <p class="text-muted">You cannot comment on this product.</p>
+    {% else %}
+        <p class="text-muted"><a href="{% url 'login' %}">Login</a> to comment.</p> 
+    {% endif %}
 </div>
 
 <section class="py-5 bg-light">
