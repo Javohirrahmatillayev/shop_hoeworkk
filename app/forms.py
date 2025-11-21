@@ -42,13 +42,26 @@ class CategoryForm(forms.ModelForm):
 class ProductCommentForm(forms.ModelForm):
     class Meta:
         model = ProductComment
-        fields = ['comment']
+        fields = ['comment', 'rating', 'file']
         widgets = {
             'comment': forms.Textarea(attrs={
                 'class': 'form-control',
-                'placeholder': 'Comment yozing...'
-            })
+                'rows': 3,
+                'placeholder': 'Write your comment here...'
+            }),
+            'rating': forms.Select(attrs={'class': 'form-select'}),
+            'file': forms.ClearableFileInput(attrs={'class': 'form-control'}),      
+        },
+        labels = {
+            'comment': '',
+            'rating': 'Rating',
+            'file': 'Upload Image (optional)'
         }
+        
+class EmailForm(forms.Form):
+    subject = forms.CharField(max_length=60)
+    message = forms.CharField(widget=forms.Textarea)
+    sender_email = forms.EmailField(label="Your Email")
 
 
         

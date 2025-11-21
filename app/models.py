@@ -85,14 +85,20 @@ class Order(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     created_at = models.DateTimeField(auto_now_add=True)
     
-class ProductComment(models.Model):
+class ProductComment(BaseModel):
+    class RatingChoices(models.IntegerChoices):
+        ONE = 1, '★☆☆☆☆'
+        TWO = 2, '★★☆☆☆'
+        THREE = 3, '★★★☆☆'
+        FOUR = 4, '★★★★☆'
+        FIVE = 5, '★★★★★'
+
+        
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='comments')
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     comment = models.TextField()
-    created_at = models.DateTimeField(auto_now_add=True)
-    
-    class Meta:
-        unique_together = ('product', 'user')
+    rating = models.PositiveSmallIntegerField(choices=RatingChoices.choices, default = RatingChoices.FIVE)
+    file = models.ImageField(upload_to='products/', null=True, blank=True)
         
     def __str__(self):
         return f"{self.user.username} - {self.product.name}"

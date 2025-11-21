@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Message sent — Success</title>
+  <style>
+    :root{--bg:#f6fff7;--card:#ffffff;--accent:#16a34a;--muted:#6b7280}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;display:grid;place-items:center;background:linear-gradient(180deg,#e6ffed 0%,#f6fff7 100%);font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial}
+    .card{background:var(--card);padding:34px;border-radius:12px;box-shadow:0 8px 30px rgba(18,38,26,.06);max-width:520px;width:92%;text-align:center}
+    .check{width:110px;height:110px;margin:0 auto 18px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(180deg,rgba(22,163,74,.12),rgba(22,163,74,.06));}
+    .check svg{width:56px;height:56px}
+    h1{margin:6px 0 6px;font-size:20px;color:#082019}
+    p{margin:0 0 18px;color:var(--muted)}
+    .actions{display:flex;gap:10px;justify-content:center}
+    .btn{padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:600}
+    .btn-primary{background:var(--accent);color:#fff}
+    .btn-link{background:transparent;color:var(--accent);border:1px solid rgba(22,163,74,.12)}
+    .small{font-size:13px;color:var(--muted);margin-top:12px}
+    @media (prefers-reduced-motion: no-preference){
+      .check svg{transform-origin:center;animation:pop .9s cubic-bezier(.2,.9,.2,1)}
+      @keyframes pop{0%{transform:scale(.6) rotate(-10deg);opacity:0}60%{transform:scale(1.05) rotate(6deg);opacity:1}100%{transform:scale(1) rotate(0)} }
+    }
+  </style>
+</head>
+<body>
+  <main class="card" role="status" aria-live="polite">
+    <div class="check" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)">
+        <circle cx="12" cy="12" r="9" opacity="0.12" fill="currentColor"></circle>
+        <path d="M7 13l3 3 7-8" stroke="currentColor"/>
+      </svg>
+    </div>
+    <h1>Your message has been sent successfully!</h1>
+    <p>Thank you — your message has been delivered. We will get back to you soon.</p>
+
+    <div class="actions">
+      <a class="btn btn-primary" href="{% url 'app:index' %}">Return to Home</a>
+      <a class="btn btn-link" href="{% url 'app:contact_us' %}">Send another message</a>
+    </div>
+
+    <p class="small">If the automatic redirect does not work, use the buttons below.</p>
+  </main>
+
+  </body>
+</html>

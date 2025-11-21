@@ -1,12 +1,13 @@
 from django.shortcuts import render, get_object_or_404, redirect, HttpResponse
 from .models import Category, Product, Order, ProductComment
-from .forms import CustomUserCreationForm, ProductForm, CategoryForm, ProductCommentForm
+from .forms import CustomUserCreationForm, ProductForm, CategoryForm, ProductCommentForm, EmailForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required   
 from django.contrib import messages
 from django.http import HttpResponseForbidden
-from django.db.models import Q
+from django.db.models import Avg
+from django.core.mail import send_mail
 
 
 
@@ -46,9 +47,40 @@ def home(request):
 
 def view_product(request, pk):
     product = get_object_or_404(Product, pk = pk)
-    return render(request, 'app/detail.html', {'product' : product})
+    related_products = Product.objects.filter(category = product.category).exclude(id = product.pk)
+    comments = ProductComment.objects.filter(product=product)
+    avg_rating = comments.aggregate(avg=Avg('rating'))['avg']
+    if avg_rating is None:
+        avg_rating = 0
+    
+    can_comment = False
+    if request.user.is_authenticated:
+        can_comment = Order.objects.filter(user=request.user, product=product).exists()
+    
+    form = ProductCommentForm()
+        
+    if request.method == 'POST' and can_comment:
+        form = ProductCommentForm(request.POST, request.FILES)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.user = request.user
+            comment.product = product
+            comment.save()
+            messages.success(request, "Comment added successfully!")
+            return redirect('app:product_detail', pk = pk )
+    
+    
+    context = {
+        'product' : product,
+        'related_products' : related_products,
+        'comments' : comments,
+        'can_comment' : can_comment, 
+        'form':form,
+        'avg_rating':avg_rating,
+    }
+    
+    return render(request, 'app/detail.html', context)
 
-from .forms import CustomUserCreationForm
 
 def register_view(request):
     if request.user.is_authenticated:
@@ -188,28 +220,26 @@ def orders_list(request):
     }
     return render(request, 'app/orders_list.html', context)
 
-@login_required
-def add_comment(request, product_id):
-    product = get_object_or_404(Product, id=product_id)
-    
-    if not Order.objects.filter(user=request.user, product=product).exists():
-        return HttpResponse('You must order this product before commenting.')
-    
-    if ProductComment.objects.filter(user=request.user, product=product).exists():
-        return HttpResponse('You have already commented on this product.')
-    
+def contact_us(request):
+    return render(request, 'app/contact_us.html')
+
+def sending_message_to_email(request):
     if request.method == 'POST':
-        form = ProductCommentForm(request.POST)
+        form = EmailForm(request.POST)
         if form.is_valid():
-            ProductComment.objects.create(
-                product=product,
-                user=request.user,
-                comment=form.cleaned_data['comment']
-            )
-            return redirect('app:product_detail', product_id=product.id)
+            subject = form.cleaned_data['subject']
+            message = form.cleaned_data['message']
+            sender_email = form.cleaned_data['sender_email']
+            
+            full_message = f"From: {sender_email}\n\n{message}"
+            
+            send_mail(subject, 
+                      full_message, 
+                      'deozey7@gmail.com',
+                      ['deozey7@gmail.com'],
+                      )
+            return render(request, 'app/success.html')
     else:
-        form = ProductCommentForm()
-
-    return render(request, 'detail.html', {'form': form, 'product': product })
-
+        form = EmailForm()
+    return render(request, 'app/send_mail.html', {'form' : form})   
     

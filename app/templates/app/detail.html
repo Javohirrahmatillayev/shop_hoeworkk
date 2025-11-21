@@ -13,6 +13,18 @@
                 <img class="card-img-top mb-5 mb-md-0" src="{{product.image_url}}" alt="..." />
             </div>
             <div class="col-md-6">
+                <div class="text-center mb-3">
+                    <h4>Average Rating: 
+                        {% if avg_rating %}
+                            {{ avg_rating|floatformat:1 }} / 5
+                            {% for i in "12345"|slice:":avg_rating"|make_list %}
+                                ★
+                            {% endfor %}
+                        {% else %}
+                            No ratings yet
+                        {% endif %}
+                    </h4>
+                </div>
                 <div class="small mb-1">Stock : {{product.stock}} </div>
                 <h1 class="display-5 fw-bolder">{{product.name}}</h1>
                 <div class="fs-5 mb-5">
@@ -64,41 +76,110 @@
 </section>
 
 <!-- Comments section -->
-<div class="container mt-4 mb-4">
-    <h3>Comments ({{ total_comments }})</h3>
-
-    {% for comment in comments %}
-        <div class="card mb-2">
-            <div class="card-body">
-                <h6 class="card-title mb-1">{{ comment.user.username }}</h6>
-                <p class="card-text">{{ comment.comment }}</p>
-                <small class="text-muted">{{ comment.created_at|date:"Y-m-d H:i" }}</small>
-            </div>
-        </div>
+<!-- Messages -->
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-info">{{ message }}</div>
     {% endfor %}
+{% endif %}
 
-    {% if total_comments > 3 %}
-        <a href="{% url 'product_comments' product.id %}" class="btn btn-link">View all comments</a>
-    {% endif %}
+<!-- Latest Comments -->
+<div class="container mt-4 mb-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="text-center">
+                <h2>Latest comments ({{ comments.count }})</h2>
+            </div>
 
-    <hr>
+            {% for comment in comments %}
+                <div class="card p-4 mt-2">
+                    <div class="card-body">
+                        <h6 class="text-muted">{{ comment.created_at|date:"Y-m-d H:i" }}</h6>
+                        <h5>{{ comment.user.username }}</h5>
+                        <p>{{ comment.comment }}</p>
+                        <p>Rating: {{ comment.get_rating_display }}</p>
+                        {% if comment.file %}
+                            <img src="{{ comment.file.url }}" alt="Attachment" style="max-width: 200px;">
+                        {% endif %}
+                    </div>
+                </div>
+            {% empty %}
+                <p class="text-center text-muted mt-3">No comments yet.</p>
+            {% endfor %}
+        </div>
 
-    {% if can_comment %}
-        <h5>Add your comment</h5>
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" class="btn btn-primary">Submit Comment</button>
-        </form>
-    {% elif user.is_authenticated %}
-        <p class="text-muted">You cannot comment on this product.</p>
-    {% else %}
-        <p class="text-muted"><a href="{% url 'login' %}">Login</a> to comment.</p> 
-    {% endif %}
+        <!-- Add Comment Form -->
+        <div class="col-8 offset-2 mt-5">
+            {% if can_comment %}
+                <div class="card p-4">
+                    <div class="text-center mb-3">
+                        <h3>Add Comment</h3>
+                    </div>
+
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form.non_field_errors }}
+                        {{ form.as_p }}
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-success">Send</button>
+                        </div>
+                    </form>
+                </div>
+            {% elif user.is_authenticated %}
+                <p class="text-center text-muted">You cannot comment on this product. Buy it first!</p>
+            {% else %}
+                <p class="text-center text-muted"><a href="{% url 'login' %}">Login</a> to comment.</p>
+            {% endif %}
+        </div>
+    </div>
 </div>
+
 
 <section class="py-5 bg-light">
     <!-- Related products section remains unchanged -->
+</section>
+
+ <!-- Related items section-->
+ <section class="py-5 bg-light">
+    <div class="container px-4 px-lg-5 mt-5">
+        <h2 class="fw-bolder mb-4">Related products</h2>
+
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+
+            {% for product in related_products %}
+            <div class="col mb-5">
+                <div class="card h-100">
+
+                    <img class="card-img-top" src="{{ product.image_url }}" alt="{{ product.name }}">
+
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <h5 class="fw-bolder">{{ product.name }}</h5>
+
+                            {% if product.discount > 0 %}
+                                <span class="text-muted text-decoration-line-through">${{ product.price }}</span>
+                                ${{ product.discounted_price|floatformat:2 }}
+                            {% else %}
+                                ${{ product.price }}
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center">
+                            <a class="btn btn-outline-dark mt-auto" href="{% url 'app:product_detail' product.id %}">
+                                View product
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
 </section>
 
 {% endblock %}

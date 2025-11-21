@@ -9,7 +9,9 @@ from .views import (index,
                     update_product, 
                     add_category, 
                     place_order, 
-                    orders_list)
+                    orders_list,
+                    contact_us,
+                    sending_message_to_email)
 
 app_name = 'app'
 
@@ -26,4 +28,6 @@ urlpatterns = [
     path('add-category/', add_category, name='add_category'),
     path('order/<int:product_id>/', place_order, name='place_order'),
     path('orders/', orders_list, name='orders_list'),
+    path('send_mail/', sending_message_to_email, name='send_mail'),
+    path('contact_us/', contact_us, name='contact_us')
 ]

@@ -65,11 +65,13 @@
                                         <h5 class="fw-bolder">{{product.name}}</h5>
                                         <!-- Product reviews-->
                                         <div class="d-flex justify-content-center small text-warning mb-2">
-                                            <div class="bi-star-fill"></div>
-                                            <div class="bi-star-fill"></div>
-                                            <div class="bi-star-fill"></div>
-                                            <div class="bi-star-fill"></div>
-                                            <div class="bi-star-fill"></div>
+                                            {% for i in "12345"|make_list %}
+                                                {% if forloop.counter <= avg_rating|floatformat:0 %}
+                                                    <i class="bi-star-fill"></i>
+                                                {% else %}
+                                                    <i class="bi-star"></i>
+                                                {% endif %}
+                                            {% endfor %}
                                         </div>
                                         <!-- Product price-->
                                         {% if product.discount > 0 %}
