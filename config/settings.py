@@ -157,3 +157,4 @@ EMAIL_HOST_PASSWORD = 'mqsa wovb hjww lesh'
 
 
 AUTH_USER_MODEL = 'app.CustomUser'
+
