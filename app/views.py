@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect, HttpResponse
 from .models import Category, Product, Order, ProductComment
-from .forms import CustomUserCreationForm, ProductForm, CategoryForm, ProductCommentForm, EmailForm
+from .forms import CustomUserCreationForm, ProductForm, CategoryForm, ProductCommentForm, EmailForm, PhoneLoginForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required   
@@ -100,20 +100,25 @@ def register_view(request):
 def login_view(request):
     if request.user.is_authenticated:
         return redirect('app:index')
-    form = AuthenticationForm(request, data=request.POST or None)
+
+    form = PhoneLoginForm(request.POST or None)
+
     if request.method == 'POST':
         if form.is_valid():
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
-            user = authenticate(request, username=username, password=password)
+            phone = form.cleaned_data['phone_number']
+            password = form.cleaned_data['password']
+
+            user = authenticate(request, phone_number=phone, password=password)
+
             if user is not None:
                 login(request, user)
                 return redirect('app:index')
             else:
-                messages.error(request, "Invalid credentials")
+                messages.error(request, "Telefon raqam yoki parol noto‘g‘ri")
         else:
-            messages.error(request, "Please correct the errors below")
-    return render(request, 'app/login.html', {'form': form})    
+            messages.error(request, "Formada xatolik bor")
+
+    return render(request, 'app/login.html', {'form': form})
 
 def logout_view(request):
     logout(request)

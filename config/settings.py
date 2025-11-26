@@ -158,3 +158,7 @@ EMAIL_HOST_PASSWORD = 'mqsa wovb hjww lesh'
 
 AUTH_USER_MODEL = 'app.CustomUser'
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'app.backends.PhoneBackend',
+]

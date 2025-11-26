@@ -3,6 +3,7 @@ from decimal import Decimal
 from django.templatetags.static import static
 from django.contrib.auth.models import AbstractUser, Group, Permission
 from django.conf import settings
+from django.contrib.auth.base_user import BaseUserManager
 
 
 
@@ -55,8 +56,30 @@ class Product(BaseModel):
     def __str__(self):
         return self.name 
     
+class CustomUserManager(BaseUserManager):
+    def create_user(self, phone_number, password=None, **extra_fields):
+        if not phone_number:
+            raise ValueError("Phone number is required")
+
+        user = self.model(phone_number=phone_number, **extra_fields)
+        user.set_password(password)
+        user.save(using=self._db)
+        return user
+
+    def create_superuser(self, phone_number, password=None, **extra_fields):
+        extra_fields.setdefault('is_staff', True)
+        extra_fields.setdefault('is_superuser', True)
+        extra_fields.setdefault('is_active', True)
+
+        return self.create_user(phone_number, password, **extra_fields)
+    
 class CustomUser(AbstractUser):
     email = models.EmailField(unique=True)
+    phone_number = models.CharField(max_length=13, unique=True, null=True, blank=True)  
+    
+    USERNAME_FIELD = 'phone_number'
+    REQUIRED_FIELDS = ['username', 'email']
+    
     ROLE_CHOICES = (
         ('admin', 'Admin'),
         ('user', 'User'), 
@@ -75,6 +98,13 @@ class CustomUser(AbstractUser):
         blank=True,
         help_text="Specific permissions for this user."
     )
+    
+    objects = CustomUserManager()
+    
+    def __str__(self):
+        return str(self.phone_number) if self.phone_number else self.username
+
+
     
 
 class Order(models.Model):
