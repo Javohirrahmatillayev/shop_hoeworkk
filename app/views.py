@@ -114,7 +114,7 @@ def login_view(request):
                 login(request, user)
                 return redirect('app:index')
             else:
-                messages.error(request, "Telefon raqam yoki parol noto‘g‘ri")
+                messages.error(request, "Telefon raqam yoki parol noto'g'ri")
         else:
             messages.error(request, "Formada xatolik bor")
 
