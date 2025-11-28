@@ -41,14 +41,14 @@
                 </ul>
 
                 <!-- Search form -->
-                <form class="d-flex me-3">
-                    <input type="text" class="form-control me-2" placeholder="Search">
+                <form class="d-flex" action="{% url 'app:index' %}">
+                    <input type="text" name="q" class="form-contro">
                     <button class="btn btn-outline-dark" type="submit">
                         <i class="bi-search-fill me-1"></i>
                         Search
+                       
                     </button>
                 </form>
-
                 <!-- Right nav links -->
                 <ul class="navbar-nav ms-auto">
                     {% if user.is_authenticated %}

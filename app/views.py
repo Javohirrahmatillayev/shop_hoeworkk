@@ -8,10 +8,14 @@ from django.contrib import messages
 from django.http import HttpResponseForbidden
 from django.db.models import Avg
 from django.core.mail import send_mail
+from django.db.models import Q
+from app.utils import filter_by_price
 
 
 
 def index(request,category_id = None):
+    search_query = request.GET.get('q','')
+    filter_type = request.GET.get('filter_type','')
     
     categories = Category.objects.all()
     
@@ -19,6 +23,11 @@ def index(request,category_id = None):
         products = Product.objects.filter(category = category_id)
     else:
         products = Product.objects.all()
+        
+    if search_query:
+        products = products.filter(Q(name__icontains = search_query) | Q(description__icontains=search_query))
+
+    products = filter_by_price(filter_type,products)
 
     context = {
         'categories':categories,
