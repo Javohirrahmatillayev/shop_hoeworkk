@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +10,7 @@
     <meta name="author" content="" />
     <title>{% block title %}{% endblock %}</title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="{% static 'app/assets/favicon.ico' %}" />
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
@@ -20,59 +21,61 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="{% url 'app:index' %}">BuyVerse</a>
+            <a class="navbar-brand" href="{% url 'app:index' %}">{% trans "BuyVerse" %}</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{% trans 'Toggle navigation' %}">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left nav links -->
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'app:index' %}">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'app:contact_us' %}">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'app:index' %}">{% trans "Home" %}</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'app:contact_us' %}">{% trans "Contact Us" %}</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="{% url 'app:index' %}" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categories</a>
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            {% trans "Categories" %}
+                        </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="{% url 'app:index' %}">All Products</a></li>
+                            <li><a class="dropdown-item" href="{% url 'app:index' %}">{% trans "All Products" %}</a></li>
                             <li><hr class="dropdown-divider" /></li>
                             {% for category in categories %}
                                 <li><a class="dropdown-item" href="{% url 'app:products_of_category' category.id %}">{{ category.title }}</a></li>
                             {% endfor %}
-                        </ul>
+                        </ul>   
                     </li>
                 </ul>
 
                 <!-- Search form -->
                 <form class="d-flex" action="{% url 'app:index' %}">
-                    <input type="text" name="q" class="form-contro">
+                    <input type="text" name="q" class="form-control" placeholder="{% trans 'Search' %}">
                     <button class="btn btn-outline-dark" type="submit">
                         <i class="bi-search-fill me-1"></i>
-                        Search
-                       
+                        {% trans "Search" %}
                     </button>
                 </form>
+
+                <!-- Language selector -->
+                <form action="{% url 'set_language' %}" method="post" class="ms-3">
+                    {% csrf_token %}
+                    <select name="language" onchange="this.form.submit()">
+                        <option value="uz">{% trans "Uzbek" %}</option>
+                        <option value="en">{% trans "English" %}</option>
+                        <option value="ru">{% trans "Russian" %}</option>
+                    </select>
+                </form>
+
                 <!-- Right nav links -->
                 <ul class="navbar-nav ms-auto">
                     {% if user.is_authenticated %}
                         {% if user.role == 'admin' %}
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'app:add_product' %}">Add Product</a>
-                            </li> 
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'app:add_category' %}">Add Category</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'app:orders_list' %}">Orders</a>
-                            </li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'app:add_product' %}">{% trans "Add Product" %}</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'app:add_category' %}">{% trans "Add Category" %}</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'app:orders_list' %}">{% trans "Orders" %}</a></li>
                         {% endif %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'app:logout' %}">Logout</a>
-                        </li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'app:logout' %}">{% trans "Logout" %}</a></li>
                     {% else %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'app:login' %}">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'app:register' %}">Register</a>
-                        </li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'app:login' %}">{% trans "Login" %}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'app:register' %}">{% trans "Register" %}</a></li>
                     {% endif %}
                 </ul>
             </div>
@@ -86,7 +89,7 @@
     <!-- Footer -->
     <footer class="py-5 bg-dark">
         <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p>
+            <p class="m-0 text-center text-white">{% trans "Copyright" %} &copy; {% trans "Your Website" %} 2023</p>
         </div>
     </footer>
 

@@ -1,17 +1,22 @@
 {% extends "app/base/base.html" %}
 
+{% load i18n %}
+
 {% block home_content %}
   {% if user.is_authenticated and user.role == 'admin' %}
     <div class="add-category-box">
-      <h2>Add category</h2>
+      <h2>{% trans "Add category" %}</h2>
       <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="btn-submit">Add</button>
+        <button type="submit" class="btn-submit">
+          {% trans "Add" %}
+        </button>
       </form>
     </div>
   {% else %}
-    <p class="no-access">You are not allowed to add categories.</p>
+    <p class="no-access">
+      {% trans "You are not allowed to add categories." %}
+    </p>
   {% endif %}
 {% endblock %}
-

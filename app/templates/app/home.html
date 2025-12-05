@@ -1,94 +1,104 @@
 {% extends "app/base/base.html" %}
 {% load static %}
+{% load i18n %}
 
+{% block title %}
+    {% trans "Home" %}
+{% endblock %}
 
-
-{%block title%}
-    Home
-{%endblock%}
-
-{%block home_content%}
-
+{% block home_content %}
 
 <header class="bg-dark py-5">
-            <div class="container px-4 px-lg-5 my-5">
-                <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">Shop in style</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
-                </div>
-            </div>
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">{% trans "Shop in style" %}</h1>
+            <p class="lead fw-normal text-white-50 mb-0">
+                {% trans "With this shop homepage template" %}
+            </p>
+        </div>
+    </div>
 </header>
-        <!-- Section-->
 
 <div class="container mt-5">
-            <div class="text-left">
-                <h3>Filter by</h3>
-            </div>
-            <div class="row">
-                <div class="col-1">
-                    <a class="btn btn-outline-dark mt-auto" href="?filter_type=expensive"> Expensive </a>
-                </div>
+    <div class="text-left">
+        <h3>{% trans "Filter by" %}</h3>
+    </div>
 
-                <div class="col-1">
-                    <a class="btn btn-outline-dark mt-auto" href="?filter_type=cheap"> Cheap </a>
-                </div>
-            
-                <div class="col-1">
-                    <a href="{% url 'app:index' %}" class="btn btn-outline-dark mt-auto">All</a>
-                </div>
-            </div>
-
-            </div>
+    <div class="row">
+        <div class="col-1">
+            <a class="btn btn-outline-dark mt-auto" href="?filter_type=expensive">
+                {% trans "Expensive" %}
+            </a>
         </div>
-        <section class="py-5">
-            <div class="container px-4 px-lg-5 mt-5">
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                    {% for product in products%}
-                        <div class="col mb-5">
-                            <div class="card h-100">
-                                <!-- Sale badge-->
-                                {% if product.discount%}
-                                    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                                {%endif%}
-                                <!-- Product image-->
-                                <img class="card-img-top" src="{{product.image_url}}" alt="..." />
-                                <!-- Product details-->
-                                <div class="card-body p-4">
-                                    <div class="text-center">
-                                        <!-- Product name-->
-                                        <h5 class="fw-bolder">{{product.name}}</h5>
-                                        <!-- Product reviews-->
-                                        <div class="d-flex justify-content-center small text-warning mb-2">
-                                            {% for i in "12345"|make_list %}
-                                                {% if forloop.counter <= avg_rating|floatformat:0 %}
-                                                    <i class="bi-star-fill"></i>
-                                                {% else %}
-                                                    <i class="bi-star"></i>
-                                                {% endif %}
-                                            {% endfor %}
-                                        </div>
-                                        <!-- Product price-->
-                                        {% if product.discount > 0 %}
-                                            <span class="text-muted text-decoration-line-through">${{ product.price }}</span>
-                                            ${{ product.discounted_price|floatformat:2 }}
+
+        <div class="col-1">
+            <a class="btn btn-outline-dark mt-auto" href="?filter_type=cheap">
+                {% trans "Cheap" %}
+            </a>
+        </div>
+
+        <div class="col-1">
+            <a href="{% url 'app:index' %}" class="btn btn-outline-dark mt-auto">
+                {% trans "All" %}
+            </a>
+        </div>
+    </div>
+</div>
+
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            {% for product in products %}
+                <div class="col mb-5">
+                    <div class="card h-100">
+
+                        {% if product.discount %}
+                            <div class="badge bg-dark text-white position-absolute"
+                                 style="top: 0.5rem; right: 0.5rem">
+                                {% trans "Sale" %}
+                            </div>
+                        {% endif %}
+
+                        <img class="card-img-top" src="{{ product.image_url }}" alt="..." />
+
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <h5 class="fw-bolder">{{ product.name }}</h5>
+
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                    {% for i in "12345"|make_list %}
+                                        {% if forloop.counter <= avg_rating|floatformat:0 %}
+                                            <i class="bi-star-fill"></i>
                                         {% else %}
-                                            ${{ product.price }}
+                                            <i class="bi-star"></i>
                                         {% endif %}
-                                    </div>
+                                    {% endfor %}
                                 </div>
-                                <!-- Product actions-->
-                                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                    <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{% url 'app:product_detail' product.id %}">View product</a></div>
-                                
-                                    
-                                </div>
+
+                                {% if product.discount > 0 %}
+                                    <span class="text-muted text-decoration-line-through">
+                                        ${{ product.price }}
+                                    </span>
+                                    ${{ product.discounted_price|floatformat:2 }}
+                                {% else %}
+                                    ${{ product.price }}
+                                {% endif %}
                             </div>
                         </div>
-                    {%endfor%}
-                   
+
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center">
+                                <a class="btn btn-outline-dark mt-auto"
+                                   href="{% url 'app:product_detail' product.id %}">
+                                    {% trans "View product" %}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            {% endfor %}
+        </div>
+    </div>
 </section>
 
-
-{%endblock%}
+{% endblock %}

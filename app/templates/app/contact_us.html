@@ -1,9 +1,10 @@
+{% load i18n %}
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact Us</title>
+  <title>{% trans "Contact Us" %}</title>
   <style>
     body{margin:0;min-height:100vh;display:grid;place-items:center;background:#f5f6f7;font-family:Inter,Arial}
     .card{background:#fff;width:92%;max-width:520px;padding:30px;border-radius:12px;box-shadow:0 6px 24px rgba(0,0,0,.07);text-align:center}
@@ -16,10 +17,12 @@
 </head>
 <body>
   <div class="card">
-    <h1>Contact Us</h1>
+    <h1>{% trans "Contact Us" %}</h1>
     <div class="contact-options">
-      <a href="/send_mail" class="button email">Send Email</a>
-      <a href="https://t.me/eighthundredthirtythree" target="_blank" class="button telegram">Message on Telegram</a>
+      <a href="/send_mail" class="button email">{% trans "Send Email" %}</a>
+      <a href="https://t.me/eighthundredthirtythree" target="_blank" class="button telegram">
+        {% trans "Message on Telegram" %}
+      </a>
     </div>
   </div>
 </body>

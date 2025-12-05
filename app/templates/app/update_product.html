@@ -1,15 +1,25 @@
 {% extends 'app/base/base.html' %}
+{% load i18n %}
 
-{% block title %}Edit Product{% endblock %}
+{% block title %}{% trans "Edit Product" %}{% endblock %}
 
 {% block detail_content %}
 <div class="container mt-5">
-    <h2>Edit Product: {{ product.name }}</h2>
+    <h2>
+        {% blocktrans with product_name=product.name %}
+            Edit Product: "{{ product_name }}"
+        {% endblocktrans %}
+    </h2>
+
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="btn btn-success">Save Changes</button>
-        <a href="{% url 'app:product_detail' product.id %}" class="btn btn-secondary">Cancel</a>
+        <button type="submit" class="btn btn-success">
+            {% trans "Save Changes" %}
+        </button>
+        <a href="{% url 'app:product_detail' product.id %}" class="btn btn-secondary">
+            {% trans "Cancel" %}
+        </a>
     </form>
 </div>
 {% endblock %}

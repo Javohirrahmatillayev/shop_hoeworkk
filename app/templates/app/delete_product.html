@@ -1,14 +1,24 @@
 {% extends 'app/base/base.html' %}
+{% load i18n %}
 
-{% block title %}Delete Product{% endblock %}
+{% block title %}{% trans "Delete Product" %}{% endblock %}
 
 {% block detail_content %}
 <div class="container mt-5">
-    <h2>Are you sure you want to delete "{{ product.name }}"?</h2>
+    <h2>
+        {% blocktrans with product_name=product.name %}
+            Are you sure you want to delete "{{ product_name }}"?
+        {% endblocktrans %}
+    </h2>
+
     <form method="POST">
         {% csrf_token %}
-        <button type="submit" class="btn btn-danger">Yes, Delete</button>
-        <a href="{% url 'app:product_detail' product.id %}" class="btn btn-secondary">Cancel</a>
+        <button type="submit" class="btn btn-danger">
+            {% trans "Yes, Delete" %}
+        </button>
+        <a href="{% url 'app:product_detail' product.id %}" class="btn btn-secondary">
+            {% trans "Cancel" %}
+        </a>
     </form>
 </div>
 {% endblock %}

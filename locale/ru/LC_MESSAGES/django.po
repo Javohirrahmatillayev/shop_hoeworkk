@@ -1,0 +1,1536 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-05 17:13+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: .\app\templates\app\add_category.html:8
+msgid "Add category"
+msgstr "Добавить категорию"
+
+#: .\app\templates\app\add_category.html:13
+msgid "Add"
+msgstr "Добавить"
+
+#: .\app\templates\app\add_category.html:19
+msgid "You are not allowed to add categories."
+msgstr "Вам не разрешено добавлять категории."
+
+#: .\app\templates\app\add_product.html:4
+#: .\app\templates\app\add_product.html:21
+#: .\app\templates\app\base\base.html:71
+msgid "Add Product"
+msgstr "Добавить продукт"
+
+#: .\app\templates\app\add_product.html:11
+msgid "Add New Product"
+msgstr "Добавить новый продукт"
+
+#: .\app\templates\app\base\base.html:24
+msgid "BuyVerse"
+msgstr "BuyVerse"
+
+#: .\app\templates\app\base\base.html:26
+msgid "Toggle navigation"
+msgstr "Переключить навигацию"
+
+#: .\app\templates\app\base\base.html:32 .\app\templates\app\home.html:6
+msgid "Home"
+msgstr "Главная"
+
+#: .\app\templates\app\base\base.html:33 .\app\templates\app\contact_us.html:7
+#: .\app\templates\app\contact_us.html:20
+msgid "Contact Us"
+msgstr "Связаться с нами"
+
+#: .\app\templates\app\base\base.html:36
+msgid "Categories"
+msgstr "Категории"
+
+#: .\app\templates\app\base\base.html:39
+msgid "All Products"
+msgstr "Все продукты"
+
+#: .\app\templates\app\base\base.html:50 .\app\templates\app\base\base.html:53
+msgid "Search"
+msgstr "Поиск"
+
+#: .\app\templates\app\base\base.html:61
+msgid "Uzbek"
+msgstr "Узбекский"
+
+#: .\app\templates\app\base\base.html:62
+msgid "English"
+msgstr "Английский"
+
+#: .\app\templates\app\base\base.html:63
+msgid "Russian"
+msgstr "Русский"
+
+#: .\app\templates\app\base\base.html:72
+msgid "Add Category"
+msgstr "Добавить категорию"
+
+#: .\app\templates\app\base\base.html:73
+msgid "Orders"
+msgstr "Заказы"
+
+#: .\app\templates\app\base\base.html:75
+msgid "Logout"
+msgstr "Выйти"
+
+#: .\app\templates\app\base\base.html:77 .\app\templates\app\detail.html:148
+#: .\app\templates\app\login.html:5 .\app\templates\app\login.html:12
+#: .\app\templates\app\login.html:22
+msgid "Login"
+msgstr "Войти"
+
+
+#: .\app\templates\app\base\base.html:78 .\app\templates\app\register.html:5
+#: .\app\templates\app\register.html:22
+msgid "Register"
+msgstr "Регистрация"
+
+#: .\app\templates\app\base\base.html:92
+msgid "Copyright"
+msgstr "Авторские права"
+
+#: .\app\templates\app\base\base.html:92
+msgid "Your Website"
+msgstr "Ваш сайт"
+
+#: .\app\templates\app\contact_us.html:22
+msgid "Send Email"
+msgstr "Отправить письмо"
+
+#: .\app\templates\app\contact_us.html:24
+msgid "Message on Telegram"
+msgstr "Сообщение в Telegram"
+
+#: .\app\templates\app\delete_product.html:4 .\app\templates\app\detail.html:52
+msgid "Delete Product"
+msgstr "Удалить продукт"
+
+#: .\app\templates\app\delete_product.html:9
+#, python-format
+msgid ""
+"\n"
+"            Are you sure you want to delete \"%(product_name)s\"?\n"
+"        "
+msgstr ""
+"\n"
+"            Вы уверены, что хотите удалить \"%(product_name)s\"?\n"
+"        "
+
+#: .\app\templates\app\delete_product.html:17
+msgid "Yes, Delete"
+msgstr "Да, удалить"
+
+#: .\app\templates\app\delete_product.html:20
+#: .\app\templates\app\update_product.html:21
+msgid "Cancel"
+msgstr "Отмена"
+
+#: .\app\templates\app\detail.html:6
+msgid "Detail"
+msgstr "Детали"
+
+#: .\app\templates\app\detail.html:19
+msgid "Average Rating"
+msgstr "Средний рейтинг"
+
+#: .\app\templates\app\detail.html:24
+msgid "No ratings yet"
+msgstr "Пока нет оценок"
+
+#: .\app\templates\app\detail.html:30
+msgid "Stock"
+msgstr "В наличии"
+
+#: .\app\templates\app\detail.html:49
+msgid "Update Product"
+msgstr "Обновить продукт"
+
+#: .\app\templates\app\detail.html:62 .\app\templates\app\orders_list.html:13
+msgid "Phone"
+msgstr "Телефон"
+
+#: .\app\templates\app\detail.html:72 .\app\templates\app\orders_list.html:16
+msgid "Price"
+msgstr "Цена"
+
+#: .\app\templates\app\detail.html:79
+#, python-format
+msgid ""
+"The price of this product will be $%(price)s. Do you really want to buy it?"
+msgstr ""
+"Цена этого продукта составит $%(price)s. Вы действительно хотите купить его?"
+
+#: .\app\templates\app\detail.html:82
+msgid "Place Order"
+msgstr "Сделать заказ"
+
+#: .\app\templates\app\detail.html:101
+msgid "Latest comments"
+msgstr "Последние комментарии"
+
+#: .\app\templates\app\detail.html:110
+msgid "Rating"
+msgstr "Рейтинг"
+
+#: .\app\templates\app\detail.html:112
+msgid "Attachment"
+msgstr "Вложение"
+
+#: .\app\templates\app\detail.html:117
+msgid "No comments yet."
+msgstr "Комментариев пока нет."
+
+#: .\app\templates\app\detail.html:125
+msgid "Add Comment"
+msgstr "Добавить комментарий"
+
+
+#: .\app\templates\app\detail.html:135
+msgid "Send"
+msgstr "Отправить"
+
+#: .\app\templates\app\detail.html:143
+msgid "You cannot comment on this product. Buy it first!"
+msgstr "Вы не можете комментировать этот продукт. Сначала купите его!"
+
+#: .\app\templates\app\detail.html:148
+msgid "to comment."
+msgstr "чтобы комментировать."
+
+#: .\app\templates\app\detail.html:160
+msgid "Related products"
+msgstr "Сопутствующие товары"
+
+#: .\app\templates\app\detail.html:185 .\app\templates\app\home.html:93
+msgid "View product"
+msgstr "Посмотреть продукт"
+
+#: .\app\templates\app\home.html:14
+msgid "Shop in style"
+msgstr "Покупки со стилем"
+
+#: .\app\templates\app\home.html:16
+msgid "With this shop homepage template"
+msgstr "С этим шаблоном главной страницы магазина"
+
+#: .\app\templates\app\home.html:24
+msgid "Filter by"
+msgstr "Фильтровать по"
+
+#: .\app\templates\app\home.html:30
+msgid "Expensive"
+msgstr "Дорогие"
+
+#: .\app\templates\app\home.html:36
+msgid "Cheap"
+msgstr "Дешёвые"
+
+#: .\app\templates\app\home.html:42
+msgid "All"
+msgstr "Все"
+
+#: .\app\templates\app\home.html:58
+msgid "Sale"
+msgstr "Скидка"
+
+#: .\app\templates\app\login.html:27
+msgid "Don't have an account?"
+msgstr "Нет аккаунта?"
+
+#: .\app\templates\app\login.html:29
+msgid "Register here"
+msgstr "Зарегистрируйтесь здесь"
+
+#: .\app\templates\app\orders_list.html:4
+#: .\app\templates\app\orders_list.html:7
+msgid "All Orders"
+msgstr "Все заказы"
+
+#: .\app\templates\app\orders_list.html:11
+msgid "ID"
+msgstr "ID"
+
+#: .\app\templates\app\orders_list.html:12
+msgid "Name"
+msgstr "Имя"
+
+#: .\app\templates\app\orders_list.html:14
+msgid "Quantity"
+msgstr "Количество"
+
+#: .\app\templates\app\orders_list.html:15
+msgid "Product"
+msgstr "Продукт"
+
+#: .\app\templates\app\orders_list.html:17
+msgid "Created At"
+msgstr "Создано"
+
+#: .\app\templates\app\orders_list.html:33
+msgid "No order."
+msgstr "Нет заказов."
+
+#: .\app\templates\app\register.html:12
+msgid "Create an Account"
+msgstr "Создать аккаунт"
+
+#: .\app\templates\app\register.html:27
+msgid "Already have an account?"
+msgstr "Уже есть аккаунт?"
+
+#: .\app\templates\app\register.html:28
+msgid "Login here"
+msgstr "Войдите здесь"
+
+#: .\app\templates\app\update_product.html:4
+msgid "Edit Product"
+msgstr "Редактировать продукт"
+
+
+#: .\app\templates\app\update_product.html:9
+#, python-format
+msgid ""
+"\n"
+"            Edit Product: \"%(product_name)s\"\n"
+"        "
+msgstr ""
+"\n"
+"            Редактировать продукт: \"%(product_name)s\"\n"
+"        "
+
+#: .\app\templates\app\update_product.html:18
+msgid "Save Changes"
+msgstr "Сохранить изменения"
+
+#: .\shop_venv\Lib\site-packages\django\contrib\messages\apps.py:16
+msgid "Messages"
+msgstr "Сообщения"
+
+#: .\shop_venv\Lib\site-packages\django\contrib\sitemaps\apps.py:8
+msgid "Site Maps"
+msgstr "Карты сайта"
+
+#: .\shop_venv\Lib\site-packages\django\contrib\staticfiles\apps.py:9
+msgid "Static Files"
+msgstr "Статические файлы"
+
+#: .\shop_venv\Lib\site-packages\django\contrib\syndication\apps.py:7
+msgid "Syndication"
+msgstr "Синдикация"
+
+#: .\shop_venv\Lib\site-packages\django\core\paginator.py:30
+msgid "…"
+msgstr "…"
+
+#: .\shop_venv\Lib\site-packages\django\core\paginator.py:32
+msgid "That page number is not an integer"
+msgstr "Номер страницы не является целым числом"
+
+#: .\shop_venv\Lib\site-packages\django\core\paginator.py:33
+msgid "That page number is less than 1"
+msgstr "Номер страницы меньше 1"
+
+#: .\shop_venv\Lib\site-packages\django\core\paginator.py:34
+msgid "That page contains no results"
+msgstr "На этой странице нет результатов"
+
+#: .\shop_venv\Lib\site-packages\django\core\validators.py:22
+msgid "Enter a valid value."
+msgstr "Введите допустимое значение."
+
+#: .\shop_venv\Lib\site-packages\django\core\validators.py:70
+msgid "Enter a valid domain name."
+msgstr "Введите корректное доменное имя."
+
+#: .\shop_venv\Lib\site-packages\django\core\validators.py:153
+#: .\shop_venv\Lib\site-packages\django\forms\fields.py:775
+msgid "Enter a valid URL."
+msgstr "Введите корректный URL."
+
+#: .\shop_venv\Lib\site-packages\django\core\validators.py:200
+msgid "Enter a valid integer."
+msgstr "Введите корректное целое число."
+
+#: .\shop_venv\Lib\site-packages\django\core\validators.py:211
+msgid "Enter a valid email address."
+msgstr "Введите корректный адрес электронной почты."
+
+#: .\shop_venv\Lib\site-packages\django\core\validators.py:289
+msgid ""
+"Enter a valid “slug” consisting of letters, numbers, underscores or hyphens."
+msgstr "Введите корректный «slug», состоящий из букв, цифр, подчеркиваний или дефисов."
+
+#: .\shop_venv\Lib\site-packages\django\core\validators.py:297
+msgid ""
+"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
+"hyphens."
+msgstr "Введите корректный «slug», состоящий из букв Unicode, цифр, подчеркиваний или дефисов."
+
+#: .\shop_venv\Lib\site-packages\django\core\validators.py:309
+#: .\shop_venv\Lib\site-packages\django\core\validators.py:318
+#: .\shop_venv\Lib\site-packages\django\core\validators.py:332
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:2220
+#, python-format
+msgid "Enter a valid %(protocol)s address."
+msgstr "Введите корректный адрес %(protocol)s."
+
+#: .\shop_venv\Lib\site-packages\django\core\validators.py:311
+msgid "IPv4"
+msgstr "IPv4"
+
+
+#: .\shop_venv\Lib\site-packages\django\core\validators.py:320
+#: .\shop_venv\Lib\site-packages\django\utils\ipv6.py:43
+msgid "IPv6"
+msgstr "IPv6"
+
+#: .\shop_venv\Lib\site-packages\django\core\validators.py:334
+msgid "IPv4 or IPv6"
+msgstr "IPv4 или IPv6"
+
+#: .\shop_venv\Lib\site-packages\django\core\validators.py:375
+msgid "Enter only digits separated by commas."
+msgstr "Введите только цифры, разделённые запятыми."
+
+#: .\shop_venv\Lib\site-packages\django\core\validators.py:381
+#, python-format
+msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
+msgstr "Убедитесь, что это значение %(limit_value)s (текущее %(show_value)s)."
+
+#: .\shop_venv\Lib\site-packages\django\core\validators.py:416
+#, python-format
+msgid "Ensure this value is less than or equal to %(limit_value)s."
+msgstr "Убедитесь, что это значение меньше или равно %(limit_value)s."
+
+#: .\shop_venv\Lib\site-packages\django\core\validators.py:425
+#, python-format
+msgid "Ensure this value is greater than or equal to %(limit_value)s."
+msgstr "Убедитесь, что это значение больше или равно %(limit_value)s."
+
+#: .\shop_venv\Lib\site-packages\django\core\validators.py:434
+#, python-format
+msgid "Ensure this value is a multiple of step size %(limit_value)s."
+msgstr "Убедитесь, что это значение кратно шагу %(limit_value)s."
+
+#: .\shop_venv\Lib\site-packages\django\core\validators.py:441
+#, python-format
+msgid ""
+"Ensure this value is a multiple of step size %(limit_value)s, starting from "
+"%(offset)s, e.g. %(offset)s, %(valid_value1)s, %(valid_value2)s, and so on."
+msgstr ""
+"Убедитесь, что это значение кратно шагу %(limit_value)s, начиная с "
+"%(offset)s, например %(offset)s, %(valid_value1)s, %(valid_value2)s и т.д."
+
+#: .\shop_venv\Lib\site-packages\django\core\validators.py:473
+#, python-format
+msgid ""
+"Ensure this value has at least %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at least %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] "Убедитесь, что это значение содержит как минимум %(limit_value)d символ (текущих %(show_value)d)."
+msgstr[1] "Убедитесь, что это значение содержит как минимум %(limit_value)d символов (текущих %(show_value)d)."
+
+#: .\shop_venv\Lib\site-packages\django\core\validators.py:491
+#, python-format
+msgid ""
+"Ensure this value has at most %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at most %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] "Убедитесь, что это значение содержит не более %(limit_value)d символа (текущих %(show_value)d)."
+msgstr[1] "Убедитесь, что это значение содержит не более %(limit_value)d символов (текущих %(show_value)d)."
+
+#: .\shop_venv\Lib\site-packages\django\core\validators.py:514
+#: .\shop_venv\Lib\site-packages\django\forms\fields.py:366
+#: .\shop_venv\Lib\site-packages\django\forms\fields.py:405
+msgid "Enter a number."
+msgstr "Введите число."
+
+#: .\shop_venv\Lib\site-packages\django\core\validators.py:516
+#, python-format
+msgid "Ensure that there are no more than %(max)s digit in total."
+msgid_plural "Ensure that there are no more than %(max)s digits in total."
+msgstr[0] "Убедитесь, что всего не более %(max)s цифры."
+msgstr[1] "Убедитесь, что всего не более %(max)s цифр."
+
+#: .\shop_venv\Lib\site-packages\django\core\validators.py:521
+#, python-format
+msgid "Ensure that there are no more than %(max)s decimal place."
+msgid_plural "Ensure that there are no more than %(max)s decimal places."
+msgstr[0] "Убедитесь, что не более %(max)s знака после запятой."
+msgstr[1] "Убедитесь, что не более %(max)s знаков после запятой."
+
+#: .\shop_venv\Lib\site-packages\django\core\validators.py:526
+#, python-format
+msgid ""
+"Ensure that there are no more than %(max)s digit before the decimal point."
+msgid_plural ""
+"Ensure that there are no more than %(max)s digits before the decimal point."
+msgstr[0] "Убедитесь, что не более %(max)s цифры перед десятичной точкой."
+msgstr[1] "Убедитесь, что не более %(max)s цифр перед десятичной точкой."
+
+#: .\shop_venv\Lib\site-packages\django\core\validators.py:597
+#, python-format
+msgid ""
+"File extension “%(extension)s” is not allowed. Allowed extensions are: "
+"%(allowed_extensions)s."
+msgstr "Расширение файла “%(extension)s” не разрешено. Допустимые расширения: %(allowed_extensions)s."
+
+#: .\shop_venv\Lib\site-packages\django\core\validators.py:659
+msgid "Null characters are not allowed."
+msgstr "Символы с нулевым значением недопустимы."
+
+
+#: .\shop_venv\Lib\site-packages\django\db\models\base.py:1600
+#: .\shop_venv\Lib\site-packages\django\forms\models.py:908
+msgid "and"
+msgstr "и"
+
+#: .\shop_venv\Lib\site-packages\django\db\models\base.py:1602
+#, python-format
+msgid "%(model_name)s with this %(field_labels)s already exists."
+msgstr "%(model_name)s с этим %(field_labels)s уже существует."
+
+#: .\shop_venv\Lib\site-packages\django\db\models\constraints.py:22
+#, python-format
+msgid "Constraint “%(name)s” is violated."
+msgstr "Нарушено ограничение “%(name)s”."
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:134
+#, python-format
+msgid "Value %(value)r is not a valid choice."
+msgstr "Значение %(value)r недопустимо."
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:135
+msgid "This field cannot be null."
+msgstr "Это поле не может быть пустым (null)."
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:136
+msgid "This field cannot be blank."
+msgstr "Это поле не может быть пустым."
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:137
+#, python-format
+msgid "%(model_name)s with this %(field_label)s already exists."
+msgstr "%(model_name)s с этим %(field_label)s уже существует."
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:141
+#, python-format
+msgid ""
+"%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
+msgstr ""
+"%(field_label)s должно быть уникальным для %(date_field_label)s %(lookup_type)s."
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:180
+#, python-format
+msgid "Field of type: %(field_type)s"
+msgstr "Поле типа: %(field_type)s"
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:1162
+#, python-format
+msgid "“%(value)s” value must be either True or False."
+msgstr "Значение “%(value)s” должно быть True или False."
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:1163
+#, python-format
+msgid "“%(value)s” value must be either True, False, or None."
+msgstr "Значение “%(value)s” должно быть True, False или None."
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:1165
+msgid "Boolean (Either True or False)"
+msgstr "Булево (True или False)"
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:1215
+#, python-format
+msgid "String (up to %(max_length)s)"
+msgstr "Строка (до %(max_length)s символов)"
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:1217
+msgid "String (unlimited)"
+msgstr "Строка (неограниченная)"
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:1326
+msgid "Comma-separated integers"
+msgstr "Целые числа, разделённые запятыми"
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:1427
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid date format. It must be in YYYY-MM-DD "
+"format."
+msgstr "Значение “%(value)s” имеет неверный формат даты. Должно быть в формате ГГГГ-ММ-ДД."
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:1431
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:1566
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD) but it is an invalid "
+"date."
+msgstr "Значение “%(value)s” имеет правильный формат (ГГГГ-ММ-ДД), но является недопустимой датой."
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:1435
+msgid "Date (without time)"
+msgstr "Дата (без времени)"
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:1562
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD "
+"HH:MM[:ss[.uuuuuu]][TZ] format."
+msgstr "Значение “%(value)s” имеет неверный формат. Должно быть в формате ГГГГ-ММ-ДД ЧЧ:ММ[:сс[.микросекунды]][TZ]."
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:1570
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
+"[TZ]) but it is an invalid date/time."
+msgstr "Значение “%(value)s” имеет правильный формат (ГГГГ-ММ-ДД ЧЧ:ММ[:сс[.микросекунды]][TZ]), но является недопустимой датой/временем."
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:1575
+msgid "Date (with time)"
+msgstr "Дата (с временем)"
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:1702
+#, python-format
+msgid "“%(value)s” value must be a decimal number."
+msgstr "Значение “%(value)s” должно быть десятичным числом."
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:1704
+msgid "Decimal number"
+msgstr "Десятичное число"
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:1864
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in [DD] "
+"[[HH:]MM:]ss[.uuuuuu] format."
+msgstr "Значение “%(value)s” имеет неверный формат. Должно быть в формате [ДД] [[ЧЧ:]ММ:]сс[.микросекунды]."
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:1868
+msgid "Duration"
+msgstr "Продолжительность"
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:1920
+msgid "Email address"
+msgstr "Электронная почта"
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:1945
+msgid "File path"
+msgstr "Путь к файлу"
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:2023
+#, python-format
+msgid "“%(value)s” value must be a float."
+msgstr "Значение “%(value)s” должно быть числом с плавающей точкой."
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:2025
+msgid "Floating point number"
+msgstr "Число с плавающей точкой"
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:2065
+#, python-format
+msgid "“%(value)s” value must be an integer."
+msgstr "Значение “%(value)s” должно быть целым числом."
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:2067
+msgid "Integer"
+msgstr "Целое число"
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:2163
+msgid "Big (8 byte) integer"
+msgstr "Большое целое число (8 байт)"
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:2180
+msgid "Small integer"
+msgstr "Малое целое число"
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:2188
+msgid "IPv4 address"
+msgstr "Адрес IPv4"
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:2219
+msgid "IP address"
+msgstr "IP-адрес"
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:2310
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:2311
+#, python-format
+msgid "“%(value)s” value must be either None, True or False."
+msgstr "Значение “%(value)s” должно быть None, True или False."
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:2313
+msgid "Boolean (Either True, False or None)"
+msgstr "Булево (True, False или None)"
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:2364
+msgid "Positive big integer"
+msgstr "Положительное большое целое число"
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:2379
+msgid "Positive integer"
+msgstr "Положительное целое число"
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:2394
+msgid "Positive small integer"
+msgstr "Положительное малое целое число"
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:2410
+#, python-format
+msgid "Slug (up to %(max_length)s)"
+msgstr "Слаг (до %(max_length)s символов)"
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:2446
+msgid "Text"
+msgstr "Текст"
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:2526
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
+"format."
+msgstr "Значение “%(value)s” имеет неверный формат. Должно быть в формате ЧЧ:ММ[:сс[.микросекунды]]."
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:2530
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
+"invalid time."
+msgstr "Значение “%(value)s” имеет правильный формат (ЧЧ:ММ[:сс[.микросекунды]]), но является недопустимым временем."
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:2534
+msgid "Time"
+msgstr "Время"
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:2642
+msgid "URL"
+msgstr "URL"
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:2666
+msgid "Raw binary data"
+msgstr "Сырые бинарные данные"
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:2731
+#, python-format
+msgid "“%(value)s” is not a valid UUID."
+msgstr "“%(value)s” не является допустимым UUID."
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\__init__.py:2733
+msgid "Universally unique identifier"
+msgstr "Глобально уникальный идентификатор"
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\files.py:244
+msgid "File"
+msgstr "Файл"
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\files.py:420
+msgid "Image"
+msgstr "Изображение"
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\json.py:24
+msgid "A JSON object"
+msgstr "JSON объект"
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\json.py:26
+msgid "Value must be valid JSON."
+msgstr "Значение должно быть допустимым JSON."
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\related.py:979
+#, python-format
+msgid "%(model)s instance with %(field)s %(value)r is not a valid choice."
+msgstr "Экземпляр %(model)s с %(field)s %(value)r не является допустимым выбором."
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\related.py:982
+msgid "Foreign Key (type determined by related field)"
+msgstr "Внешний ключ (тип определяется связанным полем)"
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\related.py:1276
+msgid "One-to-one relationship"
+msgstr "Связь один к одному"
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\related.py:1333
+#, python-format
+msgid "%(from)s-%(to)s relationship"
+msgstr "Связь %(from)s-%(to)s"
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\related.py:1335
+#, python-format
+msgid "%(from)s-%(to)s relationships"
+msgstr "Связи %(from)s-%(to)s"
+
+#: .\shop_venv\Lib\site-packages\django\db\models\fields\related.py:1383
+msgid "Many-to-many relationship"
+msgstr "Связь многие ко многим"
+
+#: .\shop_venv\Lib\site-packages\django\forms\boundfield.py:185
+msgid ":?.!"
+msgstr ":?.!"
+
+#: .\shop_venv\Lib\site-packages\django\forms\fields.py:95
+msgid "This field is required."
+msgstr "Это поле обязательно для заполнения."
+
+#: .\shop_venv\Lib\site-packages\django\forms\fields.py:315
+msgid "Enter a whole number."
+msgstr "Введите целое число."
+
+#: .\shop_venv\Lib\site-packages\django\forms\fields.py:486
+#: .\shop_venv\Lib\site-packages\django\forms\fields.py:1267
+msgid "Enter a valid date."
+msgstr "Введите допустимую дату."
+
+#: .\shop_venv\Lib\site-packages\django\forms\fields.py:509
+#: .\shop_venv\Lib\site-packages\django\forms\fields.py:1268
+msgid "Enter a valid time."
+msgstr "Введите допустимое время."
+
+#: .\shop_venv\Lib\site-packages\django\forms\fields.py:536
+msgid "Enter a valid date/time."
+msgstr "Введите допустимую дату/время."
+
+#: .\shop_venv\Lib\site-packages\django\forms\fields.py:570
+msgid "Enter a valid duration."
+msgstr "Введите допустимую длительность."
+
+#: .\shop_venv\Lib\site-packages\django\forms\fields.py:571
+#, python-brace-format
+msgid "The number of days must be between {min_days} and {max_days}."
+msgstr "Количество дней должно быть между {min_days} и {max_days}."
+
+#: .\shop_venv\Lib\site-packages\django\forms\fields.py:640
+msgid "No file was submitted. Check the encoding type on the form."
+msgstr "Файл не был отправлен. Проверьте тип кодировки формы."
+
+#: .\shop_venv\Lib\site-packages\django\forms\fields.py:641
+msgid "No file was submitted."
+msgstr "Файл не был отправлен."
+
+#: .\shop_venv\Lib\site-packages\django\forms\fields.py:642
+msgid "The submitted file is empty."
+msgstr "Отправленный файл пуст."
+
+#: .\shop_venv\Lib\site-packages\django\forms\fields.py:644
+#, python-format
+msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid_plural ""
+"Ensure this filename has at most %(max)d characters (it has %(length)d)."
+msgstr[0] "Убедитесь, что имя файла содержит не более %(max)d символа (сейчас %(length)d)."
+msgstr[1] "Убедитесь, что имя файла содержит не более %(max)d символов (сейчас %(length)d)."
+
+#: .\shop_venv\Lib\site-packages\django\forms\fields.py:649
+msgid "Please either submit a file or check the clear checkbox, not both."
+msgstr "Пожалуйста, отправьте файл или отметьте флажок очистки, не делайте оба действия одновременно."
+
+#: .\shop_venv\Lib\site-packages\django\forms\fields.py:717
+msgid "Upload a valid image. The file you uploaded was either not an image or a corrupted image."
+msgstr "Загрузите допустимое изображение. Загруженный файл не является изображением или поврежден."
+
+#: .\shop_venv\Lib\site-packages\django\forms\fields.py:889
+#: .\shop_venv\Lib\site-packages\django\forms\fields.py:975
+#: .\shop_venv\Lib\site-packages\django\forms\models.py:1592
+#, python-format
+msgid "Select a valid choice. %(value)s is not one of the available choices."
+msgstr "Выберите допустимый вариант. %(value)s не входит в список доступных вариантов."
+
+#: .\shop_venv\Lib\site-packages\django\forms\fields.py:977
+#: .\shop_venv\Lib\site-packages\django\forms\fields.py:1096
+#: .\shop_venv\Lib\site-packages\django\forms\models.py:1590
+msgid "Enter a list of values."
+msgstr "Введите список значений."
+
+#: .\shop_venv\Lib\site-packages\django\forms\fields.py:1097
+msgid "Enter a complete value."
+msgstr "Введите полное значение."
+
+#: .\shop_venv\Lib\site-packages\django\forms\fields.py:1339
+msgid "Enter a valid UUID."
+msgstr "Введите допустимый UUID."
+
+#: .\shop_venv\Lib\site-packages\django\forms\fields.py:1369
+msgid "Enter a valid JSON."
+msgstr "Введите допустимый JSON."
+
+#: .\shop_venv\Lib\site-packages\django\forms\forms.py:97
+msgid ":"
+msgstr ":"
+
+#: .\shop_venv\Lib\site-packages\django\forms\forms.py:239
+#, python-format
+msgid "(Hidden field %(name)s) %(error)s"
+msgstr "(Скрытое поле %(name)s) %(error)s"
+
+#: .\shop_venv\Lib\site-packages\django\forms\formsets.py:61
+#, python-format
+msgid "ManagementForm data is missing or has been tampered with. Missing fields: %(field_names)s. You may need to file a bug report if the issue persists."
+msgstr "Данные ManagementForm отсутствуют или были изменены. Отсутствующие поля: %(field_names)s. Возможно, потребуется отправить отчет об ошибке, если проблема повторится."
+
+#: .\shop_venv\Lib\site-packages\django\forms\formsets.py:65
+#, python-format
+msgid "Please submit at most %(num)d form."
+msgid_plural "Please submit at most %(num)d forms."
+msgstr[0] "Отправьте не более %(num)d формы."
+msgstr[1] "Отправьте не более %(num)d форм."
+
+#: .\shop_venv\Lib\site-packages\django\forms\formsets.py:70
+#, python-format
+msgid "Please submit at least %(num)d form."
+msgid_plural "Please submit at least %(num)d forms."
+msgstr[0] "Отправьте как минимум %(num)d форму."
+msgstr[1] "Отправьте как минимум %(num)d форм."
+
+#: .\shop_venv\Lib\site-packages\django\forms\formsets.py:484
+#: .\shop_venv\Lib\site-packages\django\forms\formsets.py:491
+msgid "Order"
+msgstr "Порядок"
+
+#: .\shop_venv\Lib\site-packages\django\forms\formsets.py:499
+msgid "Delete"
+msgstr "Удалить"
+
+#: .\shop_venv\Lib\site-packages\django\forms\models.py:901
+#, python-format
+msgid "Please correct the duplicate data for %(field)s."
+msgstr "Пожалуйста, исправьте дублирующиеся данные для %(field)s."
+
+#: .\shop_venv\Lib\site-packages\django\forms\models.py:906
+#, python-format
+msgid "Please correct the duplicate data for %(field)s, which must be unique."
+msgstr "Пожалуйста, исправьте дублирующиеся данные для %(field)s, которые должны быть уникальными."
+
+#: .\shop_venv\Lib\site-packages\django\forms\models.py:913
+#, python-format
+msgid "Please correct the duplicate data for %(field_name)s which must be unique for the %(lookup)s in %(date_field)s."
+msgstr "Пожалуйста, исправьте дублирующиеся данные для %(field_name)s, которые должны быть уникальными для %(lookup)s в %(date_field)s."
+
+#: .\shop_venv\Lib\site-packages\django\forms\models.py:922
+msgid "Please correct the duplicate values below."
+msgstr "Пожалуйста, исправьте приведенные ниже дублирующиеся значения."
+
+#: .\shop_venv\Lib\site-packages\django\forms\models.py:1359
+msgid "The inline value did not match the parent instance."
+msgstr "Встроенное значение не совпадает с родительским экземпляром."
+
+#: .\shop_venv\Lib\site-packages\django\forms\models.py:1450
+msgid "Select a valid choice. That choice is not one of the available choices."
+msgstr "Выберите допустимый вариант. Этот вариант не входит в список доступных."
+
+#: .\shop_venv\Lib\site-packages\django\forms\models.py:1594
+#, python-format
+msgid "“%(pk)s” is not a valid value."
+msgstr "“%(pk)s” недопустимое значение."
+
+#: .\shop_venv\Lib\site-packages\django\forms\utils.py:229
+#, python-format
+msgid "%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; it may be ambiguous or it may not exist."
+msgstr "Невозможно интерпретировать %(datetime)s в часовом поясе %(current_timezone)s; значение может быть неоднозначным или несуществующим."
+
+#: .\shop_venv\Lib\site-packages\django\forms\widgets.py:527
+msgid "Clear"
+msgstr "Очистить"
+
+#: .\shop_venv\Lib\site-packages\django\forms\widgets.py:528
+msgid "Currently"
+msgstr "Сейчас"
+
+#: .\shop_venv\Lib\site-packages\django\forms\widgets.py:529
+msgid "Change"
+msgstr "Изменить"
+
+#: .\shop_venv\Lib\site-packages\django\forms\widgets.py:866
+msgid "Unknown"
+msgstr "Неизвестно"
+
+#: .\shop_venv\Lib\site-packages\django\forms\widgets.py:867
+msgid "Yes"
+msgstr "Да"
+
+#: .\shop_venv\Lib\site-packages\django\forms\widgets.py:868
+msgid "No"
+msgstr "Нет"
+
+#: .\shop_venv\Lib\site-packages\django\template\defaultfilters.py:873
+msgid "yes,no,maybe"
+msgstr "да,нет,может быть"
+
+#: .\shop_venv\Lib\site-packages\django\template\defaultfilters.py:903
+#: .\shop_venv\Lib\site-packages\django\template\defaultfilters.py:920
+#, python-format
+msgid "%(size)d byte"
+msgid_plural "%(size)d bytes"
+msgstr[0] "%(size)d байт"
+msgstr[1] "%(size)d байт"
+
+#: .\shop_venv\Lib\site-packages\django\template\defaultfilters.py:922
+#, python-format
+msgid "%s KB"
+msgstr "%s КБ"
+
+#: .\shop_venv\Lib\site-packages\django\template\defaultfilters.py:924
+#, python-format
+msgid "%s MB"
+msgstr "%s МБ"
+
+#: .\shop_venv\Lib\site-packages\django\template\defaultfilters.py:926
+#, python-format
+msgid "%s GB"
+msgstr "%s ГБ"
+
+#: .\shop_venv\Lib\site-packages\django\template\defaultfilters.py:928
+#, python-format
+msgid "%s TB"
+msgstr "%s ТБ"
+
+#: .\shop_venv\Lib\site-packages\django\template\defaultfilters.py:930
+#, python-format
+msgid "%s PB"
+msgstr "%s ПБ"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dateformat.py:74
+msgid "p.m."
+msgstr "пп"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dateformat.py:75
+msgid "a.m."
+msgstr "дп"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dateformat.py:80
+msgid "PM"
+msgstr "ПП"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dateformat.py:81
+msgid "AM"
+msgstr "ДП"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dateformat.py:153
+msgid "midnight"
+msgstr "полночь"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dateformat.py:155
+msgid "noon"
+msgstr "полдень"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:7
+msgid "Monday"
+msgstr "Понедельник"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:8
+msgid "Tuesday"
+msgstr "Вторник"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:9
+msgid "Wednesday"
+msgstr "Среда"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:10
+msgid "Thursday"
+msgstr "Четверг"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:11
+msgid "Friday"
+msgstr "Пятница"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:12
+msgid "Saturday"
+msgstr "Суббота"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:13
+msgid "Sunday"
+msgstr "Воскресенье"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:16
+msgid "Mon"
+msgstr "Пн"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:17
+msgid "Tue"
+msgstr "Вт"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:18
+msgid "Wed"
+msgstr "Ср"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:19
+msgid "Thu"
+msgstr "Чт"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:20
+msgid "Fri"
+msgstr "Пт"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:21
+msgid "Sat"
+msgstr "Сб"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:22
+msgid "Sun"
+msgstr "Вс"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:25
+msgid "January"
+msgstr "Январь"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:26
+msgid "February"
+msgstr "Февраль"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:27
+msgid "March"
+msgstr "Март"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:28
+msgid "April"
+msgstr "Апрель"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:29
+msgid "May"
+msgstr "Май"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:30
+msgid "June"
+msgstr "Июнь"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:31
+msgid "July"
+msgstr "Июль"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:32
+msgid "August"
+msgstr "Август"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:33
+msgid "September"
+msgstr "Сентябрь"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:34
+msgid "October"
+msgstr "Октябрь"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:35
+msgid "November"
+msgstr "Ноябрь"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:36
+msgid "December"
+msgstr "Декабрь"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:39
+msgid "jan"
+msgstr "янв"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:40
+msgid "feb"
+msgstr "фев"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:41
+msgid "mar"
+msgstr "мар"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:42
+msgid "apr"
+msgstr "апр"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:43
+msgid "may"
+msgstr "май"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:44
+msgid "jun"
+msgstr "июн"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:45
+msgid "jul"
+msgstr "июл"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:46
+msgid "aug"
+msgstr "авг"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:47
+msgid "sep"
+msgstr "сен"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:48
+msgid "oct"
+msgstr "окт"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:49
+msgid "nov"
+msgstr "ноя"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:50
+msgid "dec"
+msgstr "дек"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:53
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "Янв."
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:54
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "Фев."
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:55
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "Мар."
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:56
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "Апр."
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:57
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "Май"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:58
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "Июн."
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:59
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "Июл."
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:60
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "Авг."
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:61
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "Сен."
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:62
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "Окт."
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:63
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "Ноя."
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:64
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "Дек."
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:67
+msgctxt "alt. month"
+msgid "January"
+msgstr "Январь"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:68
+msgctxt "alt. month"
+msgid "February"
+msgstr "Февраль"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:69
+msgctxt "alt. month"
+msgid "March"
+msgstr "Март"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:70
+msgctxt "alt. month"
+msgid "April"
+msgstr "Апрель"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:71
+msgctxt "alt. month"
+msgid "May"
+msgstr "Май"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:72
+msgctxt "alt. month"
+msgid "June"
+msgstr "Июнь"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:73
+msgctxt "alt. month"
+msgid "July"
+msgstr "Июль"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:74
+msgctxt "alt. month"
+msgid "August"
+msgstr "Август"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:75
+msgctxt "alt. month"
+msgid "September"
+msgstr "Сентябрь"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:76
+msgctxt "alt. month"
+msgid "October"
+msgstr "Октябрь"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:77
+msgctxt "alt. month"
+msgid "November"
+msgstr "Ноябрь"
+
+#: .\shop_venv\Lib\site-packages\django\utils\dates.py:78
+msgctxt "alt. month"
+msgid "December"
+msgstr "Декабрь"
+
+#: .\shop_venv\Lib\site-packages\django\utils\ipv6.py:20
+msgid "This is not a valid IPv6 address."
+msgstr "Это неверный IPv6-адрес."
+
+#: .\shop_venv\Lib\site-packages\django\utils\text.py:76
+#, python-format
+msgctxt "String to return when truncating text"
+msgid "%(truncated_text)s…"
+msgstr "%(truncated_text)s…"
+
+#: .\shop_venv\Lib\site-packages\django\utils\text.py:287
+msgid "or"
+msgstr "или"
+
+#: .\shop_venv\Lib\site-packages\django\utils\text.py:306
+#: .\shop_venv\Lib\site-packages\django\utils\timesince.py:135
+msgid ", "
+msgstr ", "
+
+#: .\shop_venv\Lib\site-packages\django\utils\timesince.py:8
+#, python-format
+msgid "%(num)d year"
+msgid_plural "%(num)d years"
+msgstr[0] "%(num)d год"
+msgstr[1] "%(num)d года"
+
+#: .\shop_venv\Lib\site-packages\django\utils\timesince.py:9
+#, python-format
+msgid "%(num)d month"
+msgid_plural "%(num)d months"
+msgstr[0] "%(num)d месяц"
+msgstr[1] "%(num)d месяца"
+
+#: .\shop_venv\Lib\site-packages\django\utils\timesince.py:10
+#, python-format
+msgid "%(num)d week"
+msgid_plural "%(num)d weeks"
+msgstr[0] "%(num)d неделя"
+msgstr[1] "%(num)d недели"
+
+#: .\shop_venv\Lib\site-packages\django\utils\timesince.py:11
+#, python-format
+msgid "%(num)d day"
+msgid_plural "%(num)d days"
+msgstr[0] "%(num)d день"
+msgstr[1] "%(num)d дня"
+
+#: .\shop_venv\Lib\site-packages\django\utils\timesince.py:12
+#, python-format
+msgid "%(num)d hour"
+msgid_plural "%(num)d hours"
+msgstr[0] "%(num)d час"
+msgstr[1] "%(num)d часа"
+
+#: .\shop_venv\Lib\site-packages\django\utils\timesince.py:13
+#, python-format
+msgid "%(num)d minute"
+msgid_plural "%(num)d minutes"
+msgstr[0] "%(num)d минута"
+msgstr[1] "%(num)d минуты"
+
+#: .\shop_venv\Lib\site-packages\django\views\csrf.py:29
+msgid "Forbidden"
+msgstr "Запрещено"
+
+#: .\shop_venv\Lib\site-packages\django\views\csrf.py:30
+msgid "CSRF verification failed. Request aborted."
+msgstr "Проверка CSRF не пройдена. Запрос прерван."
+
+#: .\shop_venv\Lib\site-packages\django\views\csrf.py:34
+msgid ""
+"You are seeing this message because this HTTPS site requires a “Referer "
+"header” to be sent by your web browser, but none was sent. This header is "
+"required for security reasons, to ensure that your browser is not being "
+"hijacked by third parties."
+msgstr "Вы видите это сообщение, потому что этот HTTPS-сайт требует отправки заголовка «Referer» вашим браузером, но он не был отправлен. Этот заголовок необходим по соображениям безопасности, чтобы убедиться, что ваш браузер не перехвачен третьими лицами."
+
+#: .\shop_venv\Lib\site-packages\django\views\csrf.py:40
+msgid ""
+"If you have configured your browser to disable “Referer” headers, please re-"
+"enable them, at least for this site, or for HTTPS connections, or for “same-"
+"origin” requests."
+msgstr "Если вы настроили браузер на отключение заголовков «Referer», пожалуйста, включите их снова, хотя бы для этого сайта, для HTTPS-соединений или для запросов с «same-origin»."
+
+#: .\shop_venv\Lib\site-packages\django\views\csrf.py:45
+msgid ""
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or "
+"including the “Referrer-Policy: no-referrer” header, please remove them. The "
+"CSRF protection requires the “Referer” header to do strict referer checking. "
+"If you’re concerned about privacy, use alternatives like <a "
+"rel=\"noreferrer\" …> for links to third-party sites."
+msgstr "Если вы используете тег <meta name=\"referrer\" content=\"no-referrer\"> или включаете заголовок «Referrer-Policy: no-referrer», пожалуйста, удалите их. Защита CSRF требует заголовка «Referer» для строгой проверки. Если вас беспокоит конфиденциальность, используйте альтернативы, например <a rel=\"noreferrer\" …> для ссылок на сторонние сайты."
+
+#: .\shop_venv\Lib\site-packages\django\views\csrf.py:54
+msgid ""
+"You are seeing this message because this site requires a CSRF cookie when "
+"submitting forms. This cookie is required for security reasons, to ensure "
+"that your browser is not being hijacked by third parties."
+msgstr "Вы видите это сообщение, потому что сайт требует CSRF-cookie при отправке форм. Эта cookie необходима по соображениям безопасности, чтобы убедиться, что ваш браузер не перехвачен третьими лицами."
+
+#: .\shop_venv\Lib\site-packages\django\views\csrf.py:60
+msgid ""
+"If you have configured your browser to disable cookies, please re-enable "
+"them, at least for this site, or for “same-origin” requests."
+msgstr "Если вы настроили браузер на отключение cookies, пожалуйста, включите их снова, хотя бы для этого сайта или для запросов «same-origin»."
+
+#: .\shop_venv\Lib\site-packages\django\views\csrf.py:66
+msgid "More information is available with DEBUG=True."
+msgstr "Более подробная информация доступна при DEBUG=True."
+
+#: .\shop_venv\Lib\site-packages\django\views\generic\dates.py:44
+msgid "No year specified"
+msgstr "Год не указан"
+
+#: .\shop_venv\Lib\site-packages\django\views\generic\dates.py:64
+#: .\shop_venv\Lib\site-packages\django\views\generic\dates.py:115
+#: .\shop_venv\Lib\site-packages\django\views\generic\dates.py:214
+msgid "Date out of range"
+msgstr "Дата вне допустимого диапазона"
+
+#: .\shop_venv\Lib\site-packages\django\views\generic\dates.py:94
+msgid "No month specified"
+msgstr "Месяц не указан"
+
+#: .\shop_venv\Lib\site-packages\django\views\generic\dates.py:147
+msgid "No day specified"
+msgstr "День не указан"
+
+#: .\shop_venv\Lib\site-packages\django\views\generic\dates.py:194
+msgid "No week specified"
+msgstr "Неделя не указана"
+
+#: .\shop_venv\Lib\site-packages\django\views\generic\dates.py:353
+#: .\shop_venv\Lib\site-packages\django\views\generic\dates.py:384
+#, python-format
+msgid "No %(verbose_name_plural)s available"
+msgstr "Нет доступных %(verbose_name_plural)s"
+
+#: .\shop_venv\Lib\site-packages\django\views\generic\dates.py:680
+#, python-format
+msgid ""
+"Future %(verbose_name_plural)s not available because "
+"%(class_name)s.allow_future is False."
+msgstr "Будущие %(verbose_name_plural)s недоступны, так как %(class_name)s.allow_future = False."
+
+#: .\shop_venv\Lib\site-packages\django\views\generic\dates.py:720
+#, python-format
+msgid "Invalid date string “%(datestr)s” given format “%(format)s”"
+msgstr "Неверная строка даты “%(datestr)s” для формата “%(format)s”"
+
+#: .\shop_venv\Lib\site-packages\django\views\generic\detail.py:56
+#, python-format
+msgid "No %(verbose_name)s found matching the query"
+msgstr "Не найден %(verbose_name)s, соответствующий запросу"
+
+#: .\shop_venv\Lib\site-packages\django\views\generic\list.py:70
+msgid "Page is not “last”, nor can it be converted to an int."
+msgstr "Страница не является «last» и не может быть преобразована в число."
+
+#: .\shop_venv\Lib\site-packages\django\views\generic\list.py:77
+#, python-format
+msgid "Invalid page (%(page_number)s): %(message)s"
+msgstr "Неверная страница (%(page_number)s): %(message)s"
+
+#: .\shop_venv\Lib\site-packages\django\views\generic\list.py:173
+#, python-format
+msgid "Empty list and “%(class_name)s.allow_empty” is False."
+msgstr "Список пуст, а «%(class_name)s.allow_empty» установлено в False."
+
+#: .\shop_venv\Lib\site-packages\django\views\static.py:49
+msgid "Directory indexes are not allowed here."
+msgstr "Индексы каталогов здесь не разрешены."
+
+#: .\shop_venv\Lib\site-packages\django\views\static.py:51
+#, python-format
+msgid "“%(path)s” does not exist"
+msgstr "“%(path)s” не существует"
+
+#: .\shop_venv\Lib\site-packages\django\views\static.py:68
+#: .\shop_venv\Lib\site-packages\django\views\templates\directory_index.html:8
+#: .\shop_venv\Lib\site-packages\django\views\templates\directory_index.html:11
+#, python-format
+msgid "Index of %(directory)s"
+msgstr "Индекс каталога %(directory)s"
+
+#: .\shop_venv\Lib\site-packages\django\views\templates\default_urlconf.html:7
+#: .\shop_venv\Lib\site-packages\django\views\templates\default_urlconf.html:204
+msgid "The install worked successfully! Congratulations!"
+msgstr "Установка прошла успешно! Поздравляем!"
+
+#: .\shop_venv\Lib\site-packages\django\views\templates\default_urlconf.html:206
+#, python-format
+msgid ""
+"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
+msgstr "Просмотрите <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" target=\"_blank\" rel=\"noopener\">заметки о выпуске</a> для Django %(version)s"
+
+#: .\shop_venv\Lib\site-packages\django\views\templates\default_urlconf.html:208
+#, python-format
+msgid ""
+"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
+"%(version)s/ref/settings/#debug\" target=\"_blank\" "
+"rel=\"noopener\">DEBUG=True</a> is in your settings file and you have not "
+"configured any URLs."
+msgstr "Вы видите эту страницу, потому что в вашем файле настроек установлено <a href=\"https://docs.djangoproject.com/en/%(version)s/ref/settings/#debug\" target=\"_blank\" rel=\"noopener\">DEBUG=True</a>, и вы не настроили ни одного URL."
+
+#: .\shop_venv\Lib\site-packages\django\views\templates\default_urlconf.html:217
+msgid "Django Documentation"
+msgstr "Документация Django"
+
+#: .\shop_venv\Lib\site-packages\django\views\templates\default_urlconf.html:218
+msgid "Topics, references, &amp; how-to’s"
+msgstr "Темы, ссылки и руководства"
+
+#: .\shop_venv\Lib\site-packages\django\views\templates\default_urlconf.html:226
+msgid "Tutorial: A Polling App"
+msgstr "Учебное руководство: Приложение для опросов"
+
+#: .\shop_venv\Lib\site-packages\django\views\templates\default_urlconf.html:227
+msgid "Get started with Django"
+msgstr "Начало работы с Django"
+
+#: .\shop_venv\Lib\site-packages\django\views\templates\default_urlconf.html:235
+msgid "Django Community"
+msgstr "Сообщество Django"
+
+#: .\shop_venv\Lib\site-packages\django\views\templates\default_urlconf.html:236
+msgid "Connect, get help, or contribute"
+msgstr "Связь, помощь или участие"
