@@ -1,0 +1,45 @@
+{% extends "app/base/base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Send Email</h2>
+    <form method="post">
+        {% csrf_token %}
+        
+        <!-- Subject -->
+        <div class="mb-3">
+            {{ form.subject.label_tag }}
+            {{ form.subject }}
+            {% if form.subject.errors %}
+                <div class="text-danger">
+                    {{ form.subject.errors }}
+                </div>
+            {% endif %}
+        </div>
+
+        <!-- Message -->
+        <div class="mb-3">
+            {{ form.message.label_tag }}
+            {{ form.message }}
+            {% if form.message.errors %}
+                <div class="text-danger">
+                    {{ form.message.errors }}
+                </div>
+            {% endif %}
+        </div>
+
+        <!-- Sender Email -->
+        <div class="mb-3">
+            {{ form.sender_email.label_tag }}
+            {{ form.sender_email }}
+            {% if form.sender_email.errors %}
+                <div class="text-danger">
+                    {{ form.sender_email.errors }}
+                </div>
+            {% endif %}
+        </div>
+
+        <button type="submit" class="btn btn-primary">Send</button>
+    </form>
+</div>
+{% endblock %}
